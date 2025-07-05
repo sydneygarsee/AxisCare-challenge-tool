@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Boost My Home Care ROI</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 2rem; background: #f0f4f8; }
+  h1 { color: #165caa; }
+  select, button { font-size: 1rem; padding: 0.5rem; margin-top: 1rem; }
+  .card { background: #fff; padding: 1rem; border-radius: 8px;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-top: 1rem; }
+  .action-step { margin-top: 0.75rem; font-weight: bold; }
+  .cta { display: inline-block; margin-top: 0.5rem;
+         background: #165caa; color: #fff; padding: 0.5rem 1rem;
+         text-decoration: none; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <h1>Boost Your ROI: Pick a Focus Area</h1>
+  <p>Select a key ROI driver to learn a targeted strategy and get an action!</p>
+  <select id="focusArea">
+    <option value="">-- Choose an ROI area --</option>
+    <option value="metrics">1. Measure Healthcare-Specific Metrics</option>
+    <option value="scheduling">2. Optimize Scheduling & Ops</option>
+    <option value="evv">3. Integrate EVV Compliance</option>
+    <option value="communication">4. Enhance Communication & Retention</option>
+    <option value="analytics">5. Leverage Data‑Driven Insights</option>
+  </select>
+  <br/><button onclick="showTip()">Show Strategy</button>
+
+  <div id="tipContainer"></div>
+
+  <script>
+    function showTip() {
+      const f = document.getElementById('focusArea').value;
+      const c = document.getElementById('tipContainer');
+      let card = '';
+      switch(f) {
+        case 'metrics':
+          card = `<div class="card">
+            <h2>Measure Healthcare‑Specific ROI Metrics</h2>
+            <p>Track things like revenue per caregiver, payroll vs hours delivered, EVV compliance rates & caregiver turnover to uncover real inefficiencies and hidden costs.</p>
+            <p class="action-step">Action: Review last month’s data and identify one underperforming KPI to improve.</p>
+          </div>`;
+          break;
+        case 'scheduling':
+          card = `<div class="card">
+            <h2>Optimize Scheduling & Operational Efficiency</h2>
+            <p>Improve matching, route optimization, and shift fill-rates to reduce travel time and increase billable visits. Agencies saw caregivers get ≥70% preferred hours — improving retention  [oai_citation:0‡axiscare.com](https://axiscare.com/blog/5-methods-to-improve-homecare-business-roi/?utm_source=chatgpt.com).</p>
+            <p class="action-step">Action: Audit last week’s schedule—spot 3 routes that could’ve been more efficient.</p>
+          </div>`;
+          break;
+        case 'evv':
+          card = `<div class="card">
+            <h2>Integrate EVV Compliance</h2>
+            <p>Real-time, tamper-proof EVV ensures appointments are logged correctly, reducing billing errors and penalties ().</p>
+            <p class="action-step">Action: Confirm 100% EVV usage on visits this week — follow up on any misses.</p>
+          </div>`;
+          break;
+        case 'communication':
+          card = `<div class="card">
+            <h2>Enhance Communication & Staff Retention</h2>
+            <p>Strong two-way communication and consistent caregiver-client matching cut turnover and boost client trust ().</p>
+            <p class="action-step">Action: Implement a brief daily team huddle or chat check-in with field staff.</p>
+          </div>`;
+          break;
+        case 'analytics':
+          card = `<div class="card">
+            <h2>Leverage Data‑Driven Insights</h2>
+            <p>Dashboards and reports give visibility into operations, referral sources, turnover trends—helping you act smart and improve over time ().</p>
+            <p class="action-step">Action: Set up a dashboard to track your top 3 KPIs weekly.</p>
+          </div>`;
+          break;
+        default:
+          card = '';
+      }
+      c.innerHTML = card;
+    }
+  </script>
+</body>
+</html>
