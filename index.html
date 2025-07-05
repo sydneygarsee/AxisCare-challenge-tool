@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AxisCare Objection Handling Coach</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f8fb; padding: 2rem; }
+    h1 { color: #165caa; }
+    select, button {
+      padding: 0.6rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-top: 1.5rem;
+    }
+    strong { display: block; margin-top: 0.5rem; }
+    em { color: #555; display: block; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h1>AxisCare Objection Handling Coach</h1>
+  <p>Select an objection from a home care agency to get detailed coaching on how to respond.</p>
+  <select id="objection">
+    <option value="">-- Select Objection --</option>
+    <option value="price">"AxisCare is too expensive"</option>
+    <option value="existingSystem">"We already use another system"</option>
+    <option value="notReady">"We’re not ready to make a decision yet"</option>
+    <option value="checkWithTeam">"I need to check with my team"</option>
+    <option value="badExperience">"We had a bad experience with another software"</option>
+    <option value="nextQuarter">"Let’s revisit this next quarter"</option>
+    <option value="noDifference">"I don’t see how it’s different from what we’re doing now"</option>
+    <option value="evvConcern">"We need EVV and Medicaid billing and you don’t work in our state"</option>
+  </select>
+  <button onclick="showResponse()">Get Coaching Response</button>
+
+  <div class="card" id="responseCard"></div>
+
+  <script>
+    function showResponse() {
+      const obj = document.getElementById('objection').value;
+      const card = document.getElementById('responseCard');
+      let response = '';
+
+      switch(obj) {
+        case 'price':
+          response = `
+            <strong>What they mean:</strong> "I’m not sure the value justifies the cost."
+            <strong>How to Respond:</strong>
+            “Totally fair—agency owners like you have to think ROI-first. Can I ask—what’s the cost of continuing with your current system or process?”
+            <br/>“Most of our customers see a return in just a few months. If we mapped that to your agency, would that help?”
+            <em>Pro Tip: Use their client count and payer mix to estimate ROI.</em>
+          `;
+          break;
+        case 'existingSystem':
+          response = `
+            <strong>What they mean:</strong> "Switching sounds painful."
+            <strong>How to Respond:</strong>
+            “Most agencies who switch to AxisCare are coming from [X]—and felt the same. What made them switch was [real differentiator].”
+            <em>Pro Tip: Ask what they wish their current system did better, then show how AxisCare handles it.</em>
+          `;
+          break;
+        case 'notReady':
+          response = `
+            <strong>What they mean:</strong> "We’re interested, just not right now."
+            <strong>How to Respond:</strong>
+            “What would need to be true for this to become a priority next month?”
+            <br/>“A lot of agencies start onboarding now, so they’re not starting from scratch later.”
+            <em>Pro Tip: Offer flexible timelines to stay in the deal.</em>
+          `;
+          break;
+        case 'checkWithTeam':
+          response = `
+            <strong>What they mean:</strong> "I need internal backup before I commit."
+            <strong>How to Respond:</strong>
+            “Would it be helpful if I joined that convo so I can speak directly to their needs?”
+            <br/>“I can send a checklist for what matters most to schedulers, admins, and caregivers.”
+          `;
+          break;
+        case 'badExperience':
+          response = `
+            <strong>What they mean:</strong> "I’ve been burned before and I’m cautious."
+            <strong>How to Respond:</strong>
+            “I’m so sorry to hear that. Would you be open to sharing what went wrong?”
+            <br/>“We hear that a lot—many agencies say they wish they’d made the switch to AxisCare sooner.”
+            <em>Pro Tip: Offer a reference call with a similar client who switched successfully.</em>
+          `;
+          break;
+        case 'nextQuarter':
+          response = `
+            <strong>What they mean:</strong> "I want to delay or avoid the decision."
+            <strong>How to Respond:</strong>
+            “If [pain point] continues for 3 more months, what’s the impact?”
+            <br/>“Let’s set a check-in for then—and I’ll bring ROI data or client stories to help the case.”
+          `;
+          break;
+        case 'noDifference':
+          response = `
+            <strong>What they mean:</strong> "You haven’t shown clear business value yet."
+            <strong>How to Respond:</strong>
+            “What’s the biggest operational headache your team deals with?”
+            <br/>“AxisCare isn’t just different—it’s a better way to run your agency. Let me show you how [feature] directly solves [pain].”
+          `;
+          break;
+        case 'evvConcern':
+          response = `
+            <strong>What they mean:</strong> "Compliance is non-negotiable. Can I trust you with it?"
+            <strong>How to Respond:</strong>
+            “AxisCare is approved in [X states] and supports Medicaid billing workflows in [Y states]. Let’s confirm your state specifics.”
+            <em>Pro Tip: Point to EVV compliance page or roadmap where needed.</em>
+          `;
+          break;
+        default:
+          response = '';
+      }
+
+      card.innerHTML = response;
+    }
+  </script>
+</body>
+</html>
