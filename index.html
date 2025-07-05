@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Josh’s Deal Note Reminder Generator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .response-box {
+      background: white;
+      border: 2px dashed #2ecc71;
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 600px;
+      font-size: 1.2em;
+      min-height: 100px;
+      border-radius: 10px;
+    }
+    button {
+      background: #2ecc71;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <h1>Josh’s Deal Note Reminder Generator</h1>
+  <p>Click the button to "gently" remind your sales rep they forgot their deal notes… again.</p>
+  <div class="response-box" id="responseBox">
+    👇 Click below to roast a rep.
+  </div>
+  <button onclick="generateResponse()">Generate Response</button>
+
+  <script>
+    const responses = [
+      "Oh look, another week where your deal notes are more MIA than Bigfoot.",
+      "Fun game: guess which sales rep forgot to update their deal notes. (Spoiler: it’s you.)",
+      "If forgetting deal notes was an Olympic sport, you’d have gold… and no commission.",
+      "I checked the CRM. Your notes are as empty as my faith in your memory.",
+      "Imagine a world where you updated your deal notes. Magical, isn’t it?",
+      "I’d call you out by name, but I’d have to find your notes first.",
+      "Plot twist: the real deal was the notes you never wrote.",
+      "Did your keyboard break, or did you just forget we track pipeline for a reason?",
+      "Hey Sherlock, even Watson updates his deals weekly.",
+      "The deals are real. The notes? Not so much.",
+      "At this point, I think your notes are hiding from me on purpose.",
+      "Did you mean to ghost your deals or was that a freestyle decision?",
+      "Note to self: remind [rep name] to take notes. Every. Single. Week.",
+      "Did your deals close themselves? Because your notes sure didn’t help.",
+      "Breaking News: CRM confirms your pipeline has no updates since the Stone Age.",
+      "Are your notes invisible, or do they just have a killer hiding strategy?",
+      "How’s that pipeline coming along? Asking for a forecast. And my sanity.",
+      "NASA called. Even their telescopes can’t find your weekly updates.",
+      "I’d ask about your deals, but I’m not certified in imagination-based forecasting.",
+      "If your notes were as consistent as your ghosting, we’d hit 200% quota.",
+      "Deal notes are like taxes. Not fun, but required. (Update them.)",
+      "Not saying you’re forgetful, but the CRM just sent me a sympathy card.",
+      "A gentle reminder: typing 3 sentences won’t cause physical harm. Try it!",
+      "Let me guess—you were going to update your notes ‘right after this call.’",
+      "I set a reminder to remind you to remind yourself to take notes. Still waiting.",
+      "Quick poll: who thinks [rep name] will remember next week? No one? Cool.",
+      "I saw more deal activity in my dreams than I did in your CRM updates.",
+      "Please update your notes before the CRM self-deletes in shame.",
+      "If I had a dollar for every missed update, I’d be on a yacht. Without Wi-Fi.",
+      "Just checking—do you only communicate with your pipeline via telepathy?"
+    ];
+
+    function generateResponse() {
+      const randomIndex = Math.floor(Math.random() * responses.length);
+      document.getElementById("responseBox").innerText = responses[randomIndex];
+    }
+  </script>
+</body>
+</html>
